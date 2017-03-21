@@ -15,12 +15,12 @@
         app:srcCompat="@drawable/candy_coded" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/text_view_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:paddingTop="@dimen/activity_padding"
-        android:text="@string/products_title"
+        android:text="Temporary Text"
         android:textSize="@dimen/title_size" />
 
 </LinearLayout>
