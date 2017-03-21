@@ -1,10 +1,14 @@
 package com.codeschool.candycoded;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -46,5 +50,19 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = (ListView)this.findViewById(R.id.list_view_candy);
 
         listView.setAdapter(adapter);
+
+        Context context = this;
+        String text = "Hello toast!";
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast newToast = Toast.makeText(MainActivity.this, ""+i, Toast.LENGTH_SHORT);
+                newToast.show();
+            }
+        });
     }
 }
